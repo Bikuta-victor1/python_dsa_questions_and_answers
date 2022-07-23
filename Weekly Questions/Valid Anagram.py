@@ -29,8 +29,6 @@ class Solution:
                 
         return s_hashMap == t_hashMap
         
-        
         # s_hashMap  = {'a': 3, 'n': 1, 'g': 1, 'r': 1, 'm': 1}
-        
         
         # t_hashMap  = {'n': 1, 'a': 3, 'g': 1, 'r': 1, 'm': 1}

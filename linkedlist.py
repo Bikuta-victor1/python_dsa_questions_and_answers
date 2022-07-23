@@ -116,8 +116,6 @@ class LinkedList:
         if self.head is None:
             return
 
-        # itr = self.head
-        count = 0
         if self.head == data_after:  # if the head.data on the linkedlist is data_after,
             node = Node(data_to_insert, self.head.next)   # create a new node and it's next is the previous head.next
             self.head.next = node    # so the new head next is the new node
@@ -131,6 +129,21 @@ class LinkedList:
                 break
 
             itr = itr.next
+    
+    def remove_by_value(self, data):
+        if self.head is None:
+            return
+        
+        if self.head.data == data:
+            self.head = self.head.next
+        itr = self.head
+        while itr:
+            if itr.data == data:
+                itr.data = itr.next.data
+                itr.next = itr.next.next
+                break
+                
+            itr = itr.next
             
             
 if __name__ == '__main__':
@@ -140,5 +153,7 @@ if __name__ == '__main__':
     # ll.insert_at(0, "Light")
     # ll.print()
     ll.insert_after_value("89", "Dark")
+    ll.print()
+    ll.remove_by_value("89")
     ll.print()
     
